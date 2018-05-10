@@ -1,0 +1,14 @@
+# Track entity task items
+entity.track.canonical:
+  route_name: entity.track.canonical
+  base_route: entity.track.canonical
+  title: 'View'
+entity.track.edit_form:
+  route_name: entity.track.edit_form
+  base_route: entity.track.canonical
+  title: 'Edit'
+entity.track.delete_form:
+  route_name:  entity.track.delete_form
+  base_route:  entity.track.canonical
+  title: Delete
+  weight: 10

@@ -1,0 +1,4 @@
+name: Tracks
+description: A module that stores track music to run a soundsystem
+core: 8.x
+type: module

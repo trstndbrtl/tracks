@@ -1,0 +1,49 @@
+tracks.importer.*:
+  type: config_entity
+  label: 'Importer config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    plugin:
+      type: string
+      label: Plugin ID
+    plugin_configuration:
+      type: tracks.importer.plugin.[%parent.plugin]
+    update_existing:
+      type: boolean
+      label: Whether to update existing tracks
+    source:
+      type: string
+      label: The source of the tracks
+    bundle:
+      type: string
+      label: The track bundle
+
+tracks.importer.plugin.*:
+  type: mapping
+  label: 'Plugin configuration'
+
+tracks.importer.plugin.json:
+  type: mapping
+  label: Plugin configuration for the Json importer plugin
+  mapping:
+    url:
+      type: uri
+      label: Uri
+
+tracks.importer.plugin.csv:
+  type: mapping
+  label: Plugin configuration for the CSV importer plugin
+  mapping:
+    file:
+      type: sequence
+      label: File IDs
+      sequence:
+        type: integer
+        label: CSV File ID

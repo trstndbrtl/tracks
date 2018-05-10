@@ -1,0 +1,15 @@
+entity.track.add_page:
+  route_name: entity.track.add_page
+  title: 'Add Track'
+  appears_on:
+    - entity.track.collection
+entity.importer.add_form:
+  route_name: 'entity.importer.add_form'
+  title: 'Add Importer'
+  appears_on:
+    - entity.importer.collection
+entity.track_type.add_form:
+  route_name: 'entity.track_type.add_form'
+  title: 'Add Track type'
+  appears_on:
+    - entity.track_type.collection

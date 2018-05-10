@@ -1,0 +1,21 @@
+# Track entity menu items
+entity.track.collection:
+  title: 'Track list'
+  route_name: entity.track.collection
+  description: 'List Track entities'
+  parent: system.admin_structure
+  weight: 100
+# Importer entity menu items
+entity.importer.collection:
+  title: 'Importer'
+  route_name: entity.importer.collection
+  description: 'List Importer entities'
+  parent: system.admin_structure
+  weight: 99
+entity.track_type.collection:
+  title: 'Track types'
+  route_name: entity.track_type.collection
+  description: 'List track bundles'
+  parent: system.admin_structure
+  weight: 99
+

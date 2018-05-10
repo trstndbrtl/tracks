@@ -1,0 +1,8 @@
+view track entities:
+  title: 'View Track entities'
+edit track entities:
+  title: 'Edit Track entities'
+delete track entities:
+  title: 'Delete Track entities'
+add track entities:
+  title: 'Create new Track entities'

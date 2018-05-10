@@ -1,0 +1,9 @@
+services:
+  tracks.importer_manager:
+    class: Drupal\tracks\Plugin\ImporterManager
+    parent: default_plugin_manager
+    arguments: ['@entity_type.manager']
+  tracks.images_stream_wrapper:
+    class: Drupal\tracks\StreamWrapper\TracksStreamWrapper
+    tags:
+      - { name: stream_wrapper, scheme: tracks }
