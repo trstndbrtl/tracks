@@ -79,6 +79,57 @@ interface TrackInterface extends ContentEntityInterface, EntityChangedInterface 
   public function setSource($source);
 
   /**
+   * Gets the Track platform.
+   *
+   * @return string
+   */
+  public function getPlatform();
+
+  /**
+   * Sets the Track platform.
+   *
+   * @param string $platform
+   *
+   * @return \Drupal\tracks\Entity\TrackInterface
+   *   The called Track entity.
+   */
+  public function setPlatform($platform);
+
+/**
+   * Gets the Track platform display.
+   *
+   * @return string
+   */
+  public function getPlatformDisplay();
+
+  /**
+   * Sets the Track platform display.
+   *
+   * @param string $platformDisplay
+   *
+   * @return \Drupal\tracks\Entity\TrackInterface
+   *   The called Track entity.
+   */
+  public function setPlatformDisplay($platformDisplay);
+
+  /**
+   * Gets the Track url.
+   *
+   * @return string
+   */
+  public function getTrackUrl();
+
+  /**
+   * Sets the Track url.
+   *
+   * @param string $url
+   *
+   * @return \Drupal\tracks\Entity\TrackInterface
+   *   The called Track entity.
+   */
+  public function setTrackUrl($trackUrl);
+
+  /**
    * Gets the Track image.
    *
    * @return \Drupal\file\FileInterface

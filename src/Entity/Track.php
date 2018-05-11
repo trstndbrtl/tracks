@@ -114,6 +114,51 @@ class Track extends ContentEntityBase implements TrackInterface {
     return $this;
   }
 
+    /**
+   * {@inheritdoc}
+   */
+  public function getPlatform() {
+    return $this->get('platform')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setPlatform($platform) {
+    $this->set('platform', $platform);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getPlatformDisplay() {
+    return $this->get('platform_display')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setPlatformDisplay($platformDisplay) {
+    $this->set('platform_display', $platformDisplay);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getTrackUrl() {
+    return $this->get('track_url')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setTrackUrl($trackUrl) {
+    $this->set('track_url', $trackUrl);
+    return $this;
+  }
+
   /**
    * {@inheritdoc}
    */
@@ -207,6 +252,68 @@ class Track extends ContentEntityBase implements TrackInterface {
         'text_processing' => 0,
       ])
       ->setDefaultValue('');
+
+    $fields['platform'] = BaseFieldDefinition::create('list_string')
+      ->setLabel(t('Platform'))
+      ->setRequired(true)
+      ->setSettings(array(
+        'allowed_values' => [
+          'soundcloud' => t('Soundcloud'),
+          'mixcloud' => t('Mixcloud'),
+          'youtube' => t('Youtube'),
+          'vimeo' => t('Vimeo'),
+        ],
+      ))
+      ->setDefaultValue('soundcloud')
+      ->setDisplayOptions('form', array(
+        'type' => 'options_select',
+        'weight' => -3,
+      ))
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+    
+    $fields['platform_display'] = BaseFieldDefinition::create('list_string')
+      ->setLabel(t('Platform display'))
+      ->setRequired(true)
+      ->setSettings(array(
+        'allowed_values' => [
+          'sonore' => t('Sonore'),
+          'visuel' => t('Visual'),
+          'text' => t('Text'),
+        ],
+      ))
+      ->setDefaultValue('sonore')
+      ->setDisplayOptions('form', array(
+        'type' => 'options_select',
+        'weight' => -3,
+      ))
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'string',
+        'weight' => -4,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['track_url'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('track url'))
+      ->setDescription(t('The url of the Track.'))
+      ->setSettings([
+        'max_length' => 955,
+        'text_processing' => 0,
+      ])
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'string',
+        'weight' => -4,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -4,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
 
     $fields['image'] = BaseFieldDefinition::create('image')
       ->setLabel(t('Image'))
